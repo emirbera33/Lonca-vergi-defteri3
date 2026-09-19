@@ -1,0 +1,31 @@
+functionsDirectory = "/opt/build/repo/lonca-vergi/netlify/functions"
+functionsDirectoryOrigin = "config-v1"
+plugins = []
+headers = []
+redirects = []
+
+[build]
+publish = "/opt/build/repo/lonca-vergi/public"
+publishOrigin = "config"
+base = "/opt/build/repo/lonca-vergi"
+functions = "/opt/build/repo/lonca-vergi/netlify/functions"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[functions]
+
+[functions."*"]
+external_node_modules = ["@netlify/blobs"]
+node_bundler = "esbuild"
