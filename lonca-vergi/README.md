@@ -34,7 +34,7 @@ Sürükle-bırak yöntemi fonksiyonları çalıştırmaz, o yüzden kullanma.
 | `DISCORD_PUBLIC_KEY` | Discord'dan kopyaladığın Public Key |
 | `ADMIN_PASSWORD` | Sitede yönetici girişi için seçtiğin şifre (uzun ve tahmin edilmesi zor olsun) |
 | `SITE_URL` | (isteğe bağlı) `https://siten.netlify.app`, Discord panellerinde link olarak görünür |
-| `REQUIRE_APPROVAL` | (isteğe bağlı) `true` yaparsan üye "Ödendi"ye basınca durum **Onay bekliyor** olur, yönetici sitede onaylar |
+| `REQUIRE_APPROVAL` | (isteğe bağlı) `true` yaparsan üye "Ödendi"ye basınca durum **Onay bekliyor** olur, yönetici sitede onaylar (değer büyük/küçük harf ve çevresindeki boşluklardan etkilenmez) |
 
 Değişkenleri ekledikten sonra siteyi yeniden deploy et.
 
