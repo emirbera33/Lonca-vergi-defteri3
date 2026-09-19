@@ -44,6 +44,14 @@ const isAdmin = (i) => {
 
 const userOf = (i) => i.member?.user ?? i.user;
 
+function approvalRequired() {
+  const value = String(process.env.REQUIRE_APPROVAL ?? "")
+    .trim()
+    .replace(/^['"]|['"]$/g, "")
+    .toLowerCase();
+  return ["true", "1", "yes", "on"].includes(value);
+}
+
 /* ---------- kayıt ---------- */
 function registerModal() {
   const row = (custom_id, label, required, max) => ({
@@ -107,7 +115,7 @@ async function handlePaid(i) {
   if (m.status === "paid") return reply("Bu dönem için zaten **Ödendi** görünüyorsun 👍");
   if (m.status === "pending") return reply("Ödemen zaten yönetici onayı bekliyor.");
 
-  if (process.env.REQUIRE_APPROVAL === "true") {
+  if (approvalRequired()) {
     m.status = "pending";
     await saveState(state);
     return reply("⏳ Ödeme bildirimin alındı. Yönetici onaylayınca listede **Ödendi** olacak.");

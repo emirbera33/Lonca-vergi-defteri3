@@ -1,0 +1,4 @@
+[build]
+  base = "lonca-vergi"
+  publish = "public"
+  functions = "netlify/functions"
